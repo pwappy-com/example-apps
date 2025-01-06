@@ -1,0 +1,111 @@
+<!DOCTYPE html><html lang=ja><head><meta content=今日やることの管理 name=description><title>今日やること</title><meta charset=UTF-8><meta content="IE=edge" http-equiv=X-UA-Compatible><meta content="width=device-width, initial-scale=1.0" name=viewport><link href=favicon.ico rel=icon sizes=32x32><link href="images/icon.svg?v=20250106205343" rel=icon type=image/svg+xml><link href="images/apple-touch-icon.png?v=20250106205343" rel=apple-touch-icon><link href="manifest.webmanifest?v=20250106205343" rel=manifest><script defer src=https://cdn.jsdelivr.net/npm/holderjs@2.9.9/holder.min.js></script><link crossorigin=anonymous href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css referrerpolicy=no-referrer rel=stylesheet><link href=https://unpkg.com/onsenui/css/onsenui.min.css rel=stylesheet><link href=https://unpkg.com/onsenui/css/onsen-css-components.min.css rel=stylesheet><script src=https://unpkg.com/onsenui/js/onsenui.min.js></script><script>//ons.platform.select('ios');
+    if (ons.platform.isIPhoneX()) {
+        document.documentElement.setAttribute('onsflag-iphonex-portrait', '');
+        document.documentElement.setAttribute('onsflag-iphonex-landscape', '');
+    }
+    ons.disableIconAutoPrefix();</script><script crossorigin=anonymous integrity="sha512-X0CJvcClD8EXFn5Oq8BD5lIsznKDfxb0Sf9Wr8MCCTyAEWaAAxr0Jvm3qyofsmN7eSHMZ0PPQGjVKroLAfexrA==" referrerpolicy=no-referrer src=https://cdnjs.cloudflare.com/ajax/libs/uuid/8.2.0/uuid.min.js></script><script src=https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js></script> <body><app id=application><ons-splitter id=ons-splitter1><ons-splitter-side collapse=collapse id=ons-splitter-side1 page=side.html side=left swipeable="" width=220px></ons-splitter-side><ons-navigator id=ons-navigator2 page=yarukoto.html swipeable=""></ons-navigator></ons-splitter></app> <template id=side.html><ons-page id=ons-page2><div class=page__background id=div15></div> <div class=page__content id=div16><ons-list-title id=ons-list-title2 style="
+display: flex;
+justify-content: center;
+">サイドメニュー</ons-list-title><ons-list id=ons-list1><ons-list-item id=ons-list-item1 tappable=""><div class=left id=div17><ons-icon icon=fa-list-ol id=ons-icon14></ons-icon></div> <div class=center id=div18><div id=div22>これからリスト</div></div> <div class=right id=div21></div></ons-list-item><ons-list-item id=ons-list-item2 tappable=""><div class=left id=div23><ons-icon icon=fa-check id=ons-icon13></ons-icon></div> <div class=center id=div24><div id=div25>終わったリスト</div></div> <div class=right id=div26></div></ons-list-item><ons-list-item id=ons-list-item5 tappable=""><div class=left id=div60><ons-icon icon=fa-gear id=ons-icon12></ons-icon></div> <div class=center id=div61><div id=div62>管理</div></div> <div class=right id=div63></div></ons-list-item></ons-list> </div></ons-page></template> <template id=yarukoto.html><ons-page id=ons-page1><div class=page__background id=div1></div> <ons-toolbar id=ons-toolbar1><div class=left id=div3 style="
+display: flex;
+justify-content: center;
+align-items: center;
+"><img height="" id=img1 src=images/icon.png?v1 style="width: 30px;
+height: 30px;" width=""></div> <div class=center id=div4>今日やること</div> <div class=right id=div5 style="
+display: flex;
+justify-content: center;
+align-items: center;
+"><ons-toolbar-button icon=fa-bars id=ons-toolbar-button1></ons-toolbar-button></div></ons-toolbar><div class=page__content id=div2><ons-list-title id=ons-list-title1 style="
+display: flex;
+">これからリスト<div id=todo-list-count>(0件)</div></ons-list-title><template id=todo-list-template><ons-list-item class=todo-list-item tappable=""><div class=left id=div10></div> <div class=center id=div11><div class="list-item__title todo-item-title" id=div12></div> <div class="list-item__subtitle todo-item-time"></div></div> <div class=right id=div14><ons-button class=edit-button modifier=light><ons-icon icon=fa-ellipsis-v id=ons-icon6></ons-icon></ons-button></div></ons-list-item></template><ons-list id=ons-todo-list></ons-list> </div> <ons-speed-dial direction=up id=ons-speed-dial1 open position="bottom right"><ons-fab id=ons-fab1><ons-icon icon=fa-plus id=ons-icon1></ons-icon></ons-fab></ons-speed-dial><ons-dialog cancelable=true id=ons-dialog2><div id=div7 style="display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center; padding: 10px;"><div id=div9 style="display: flex;
+flex-direction: column;
+width: 100%;"><label for=task-name id=label2>なにする？</label><ons-input id=ons-input1 input-id=task-name modifier=underbar placeholder=タスク名 style="width: 100%;"></ons-input> </div> <div id=div8 style="display: flex;
+flex-direction: column;
+width: 100%;
+margin-top: 20px;"><label for=time-input id=label1>何分くらいかかりそう？</label><ons-input id=ons-input3 input-id=time-input modifier=underbar placeholder=推定時間(分)を入力 type=number></ons-input> </div> <div id=div44 style="display: flex;
+justify-content: space-evenly;
+width: 100%;"><ons-button id=ons-button5 modifier=cta style="margin-top: 10px;
+background-color: rgb(248, 94, 94);
+display: none;">削除</ons-button><ons-button id=ons-button3 style="margin-top: 10px;">登録</ons-button> </div></div></ons-dialog></ons-page></template> <template id=owatta.html><ons-page id=ons-page3><div class=page__background id=div31></div> <ons-toolbar id=ons-toolbar2><div class=left id=div32 style="
+display: flex;
+justify-content: center;
+align-items: center;
+"><img height="" id=img2 src=images/icon.png?v1 style="width: 30px;
+height: 30px;" width=""></div> <div class=center id=div33>今日やったこと</div> <div class=right id=div78 style="
+display: flex;
+justify-content: center;
+align-items: center;
+"><ons-toolbar-button icon=fa-bars id=ons-toolbar-button2></ons-toolbar-button></div></ons-toolbar><div class=page__content id=div35><ons-list-title id=ons-list-title3 style="
+display: flex;
+">終わったリスト<div id=owatta-list-count>(0件)</div></ons-list-title><template id=owatta-item-template><ons-list-item class=todo-list-item tappable=""><div class=left></div> <div class=center><div class="list-item__title todo-item-title"></div> <div class="list-item__subtitle todo-item-time"></div></div> <div class=right><ons-button class=edit-button modifier=light><ons-icon icon=fa-undo></ons-icon></ons-button></div></ons-list-item></template><ons-list id=owatta-list></ons-list> </div> <ons-alert-dialog cancelable="" id=ons-alert-dialog2><div class=alert-dialog-title id=div57>確認</div> <div class=alert-dialog-content id=div58>これからリストに戻す？</div> <div class=alert-dialog-footer id=div59><ons-alert-dialog-button id=ons-alert-dialog-button3>戻さない</ons-alert-dialog-button><ons-alert-dialog-button id=ons-alert-dialog-button4>戻す</ons-alert-dialog-button> </div></ons-alert-dialog></ons-page></template> <template id=timer.html><ons-page id=ons-page4><div class=page__background id=div45></div> <ons-toolbar id=ons-toolbar3><div class=left id=div47><ons-back-button id=ons-back-button1></ons-back-button></div> <div class="center timer-title" id=div48></div> <div class=right id=div49></div></ons-toolbar><div class=page__content id=div46><div id=div51 style="display: flex;
+flex-direction: column;
+height: 100%;"><div class=estimated-time id=estimated-time style="flex-grow: 0.2;
+flex-shrink: 1;
+flex-basis: auto;
+order: 1;
+align-self: auto;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 18px;">予定している作業時間：-- 分</div> <div id=timer-container style="flex-grow: 1;
+flex-shrink: 1;
+flex-basis: auto;
+order: 1;
+align-self: auto;
+text-align: center; margin-top: 50px;"><div id=timer-display style="font-size: 4em; margin-bottom: 20px;">00:00</div> <div id=div55 style="
+display: flex;
+justify-content: center;
+"><ons-button id=start-btn modifier=outline style="padding: 10px 20px;
+border-radius: 50%;"><ons-icon fixed-width="" icon=fa-play id=ons-icon7 size=""></ons-icon></ons-button><ons-button id=stop-btn modifier=outline style="padding: 10px 20px;
+border-radius: 50%;
+display: none;"><ons-icon icon=fa-pause id=ons-icon8></ons-icon></ons-button><ons-button id=reset-btn modifier=outline style="padding: 10px 20px;
+margin-left: 20px;
+border-radius: 50%;
+color: rgb(248, 99, 99);"><ons-icon icon=fa-stop id=ons-icon9></ons-icon></ons-button> </div></div></div></div> <ons-alert-dialog cancelable="" id=ons-alert-dialog1><div class=alert-dialog-content id=div53>記録している時間をリセットする？</div> <div class=alert-dialog-footer id=div54><ons-alert-dialog-button id=ons-alert-dialog-button1>いいえ</ons-alert-dialog-button><ons-alert-dialog-button id=ons-alert-dialog-button2>はい</ons-alert-dialog-button> </div></ons-alert-dialog><ons-bottom-toolbar id=ons-bottom-toolbar1><div class=bottom-bar__line-height id=div56 style="display: flex;
+justify-content: center;
+align-items: flex-end;
+height: 100%;"><ons-button id=ons-button6 modifier=outline style="
+display: flex;
+align-items: baseline;
+">タスク完了<ons-icon icon=fa-check id=ons-icon10 style="flex-grow: 0;
+flex-shrink: 1;
+flex-basis: auto;
+order: -1;
+align-self: auto;
+color: green;"></ons-icon></ons-button></div></ons-bottom-toolbar></ons-page></template> <template id=man.html><ons-page id=ons-page5><div class=page__background id=div64></div> <ons-toolbar id=ons-toolbar4><div class=left id=div69 style="
+display: flex;
+justify-content: center;
+align-items: center;
+"><img height="" id=img3 src=images/icon.png?v1 style="width: 30px;
+height: 30px;" width=""></div> <div class=center id=div67>管理</div> <div class=right id=div79 style="
+display: flex;
+justify-content: center;
+align-items: center;
+"><ons-toolbar-button icon=fa-bars id=ons-toolbar-button3></ons-toolbar-button></div></ons-toolbar><div class=page__content id=div65><div id=div70 style="width: 100%;
+display: flex;
+flex-direction: column;
+height: 100%;"><div id=div75 style="flex-grow: 1;
+flex-shrink: 1;
+flex-basis: auto;
+order: 0;
+align-self: auto;
+display: flex;
+flex-direction: column;
+width: 100%;"><div id=div77 style="
+flex-grow: 00.5;
+flex-shrink: 1;
+flex-basis: auto;
+order: 1;
+align-self: auto;
+"></div> <canvas id=stackedBarChart></canvas><canvas id=taskStatusChart></canvas> </div> <hr id=hr2 style="width: 90%;"> <div id=div72 style="display: flex;
+align-items: center;
+justify-content: space-around;
+padding-top: 20px;"><div id=div71>終わったリストをクリア</div> <ons-button id=ons-button8>クリア</ons-button></div> <hr id=hr1 style="width: 90%;"> <div id=div73 style="display: flex;
+align-items: center;
+justify-content: space-around;
+padding-top: 20px;"><div id=div74>すべてのリストをクリア</div> <ons-button id=ons-button9 style="background-color: rgb(248, 94, 94);">クリア</ons-button></div> <hr id=hr3 style="width: 90%;"></div></div></ons-page></template> <script src=main.js?20250106205343 type=module></script><script>if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js');
+}</script>
