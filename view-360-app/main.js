@@ -1,0 +1,5 @@
+function ファイル選択(event){const file=event.target.files[0];const reader=new FileReader();reader.onload=function(e){document.getElementById('img2').src=e.target.result}
+reader.readAsDataURL(file)}
+function ビューボタンクリック(event){const imgSrc=document.getElementById('img2').src;const aFrame=document.createElement('a-scene');aFrame.style.zIndex=9999;const aSky=document.createElement('a-sky');aSky.setAttribute('src',imgSrc);aFrame.appendChild(aSky);document.body.appendChild(aFrame);window.history.pushState({},'');window.onpopstate=()=>{document.body.removeChild(aFrame)}}
+document.addEventListener('init',(event)=>{let page=event.target;if(page.id==='ons-page1'){let onsbutton1_element=document.querySelector('#ons-button1');if(onsbutton1_element){onsbutton1_element.addEventListener('click',ビューボタンクリック);page.addEventListener('destroy',function(event){onsbutton1_element.removeEventListener('click',ビューボタンクリック)},{'once':!0})}
+let input2_element=document.querySelector('#input2');if(input2_element){input2_element.addEventListener('change',ファイル選択);page.addEventListener('destroy',function(event){input2_element.removeEventListener('change',ファイル選択)},{'once':!0})}}})
