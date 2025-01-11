@@ -1,22 +1,41 @@
-<!DOCTYPE html><html lang=ja><head><meta content=Pwappyで作成された読み上げアプリ name=description><title>Nデイリー</title><meta charset=UTF-8><meta content="IE=edge" http-equiv=X-UA-Compatible><meta content="width=device-width, initial-scale=1.0" name=viewport><link href=favicon.ico rel=icon sizes=32x32><link href="images/icon.svg?v=20250111104948" rel=icon type=image/svg+xml><link href="images/apple-touch-icon.png?v=20250111104948" rel=apple-touch-icon><link href="manifest.webmanifest?v=20250111104948" rel=manifest><script defer src=https://cdn.jsdelivr.net/npm/holderjs@2.9.9/holder.min.js></script><link crossorigin=anonymous href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css referrerpolicy=no-referrer rel=stylesheet><link href=https://unpkg.com/onsenui/css/onsenui.min.css rel=stylesheet><link href=https://unpkg.com/onsenui/css/onsen-css-components.min.css rel=stylesheet><script src=https://unpkg.com/onsenui/js/onsenui.min.js></script><script>if (ons.platform.isIPhoneX()) {
+<!DOCTYPE html><html lang=ja><head><meta content=Pwappyで作成された読み上げアプリ name=description><title>Nデイリー</title><meta charset=UTF-8><meta content="IE=edge" http-equiv=X-UA-Compatible><meta content="width=device-width, initial-scale=1.0" name=viewport><link href=favicon.ico rel=icon sizes=32x32><link href="images/icon.svg?v=20250111144206" rel=icon type=image/svg+xml><link href="images/apple-touch-icon.png?v=20250111144206" rel=apple-touch-icon><link href="manifest.webmanifest?v=20250111144206" rel=manifest><script defer src=https://cdn.jsdelivr.net/npm/holderjs@2.9.9/holder.min.js></script><link crossorigin=anonymous href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css referrerpolicy=no-referrer rel=stylesheet><link href=https://unpkg.com/onsenui/css/onsenui.min.css rel=stylesheet><link href=https://unpkg.com/onsenui/css/onsen-css-components.min.css rel=stylesheet><script src=https://unpkg.com/onsenui/js/onsenui.min.js></script><script>if (ons.platform.isIPhoneX()) {
         document.documentElement.setAttribute('onsflag-iphonex-portrait', '');
         document.documentElement.setAttribute('onsflag-iphonex-landscape', '');
     }
-    ons.disableIconAutoPrefix();</script><script crossorigin=anonymous integrity="sha512-dfX5uYVXzyU8+KHqj8bjo7UkOdg18PaOtpa48djpNbZHwExddghZ+ZmzWT06R5v6NSk3ZUfsH6FNEDepLx9hPQ==" referrerpolicy=no-referrer src=https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js></script><link href=style.css?20250111104948 rel=stylesheet> <body><app id=application><ons-navigator id=ons-navigator1 page=narou-list.html swipeable=""></ons-navigator></app> <template id=narou-list.html><ons-page id=ons-page1><div class=page__background id=div1></div> <ons-toolbar id=ons-toolbar1><div class=left id=div3></div> <div class=center id=div4>Nデイリー</div> <div class=right id=div5><ons-toolbar-button icon=fa-refresh id=ons-toolbar-button1></ons-toolbar-button></div></ons-toolbar><div class=page__content id=div2><template id=narou-item-template><ons-list-item class=narou-item modifier=chevron tappable=""><div class="left narou-item-number"></div> <div class=center><div class="list-item__title narou-item-title">タイトル</div> <div class="list-item__subtitle narou-item-info">作品情報</div></div></ons-list-item></template><ons-list id=narou-list modifier=inset></ons-list> </div> <ons-bottom-toolbar id=ons-bottom-toolbar2><div id=div51 style="width: 100%;
-display: flex;
-justify-content: center;
-height: 100%;"><ons-segment active-index=0 id=ons-segment1 modifier="" style="width: 100%;"><button id=button1>50</button><button id=button2>100</button><button id=button3>150</button><button id=button4>200</button><button id=button5>250</button><button id=button6>300</button></ons-segment></div></ons-bottom-toolbar><ons-modal id=ons-modal1><ons-progress-circular id=ons-progress-circular1 indeterminate></ons-progress-circular><div id=div18 style="text-align: center"><p id=p1 style="
+    ons.disableIconAutoPrefix();</script><script crossorigin=anonymous integrity="sha512-dfX5uYVXzyU8+KHqj8bjo7UkOdg18PaOtpa48djpNbZHwExddghZ+ZmzWT06R5v6NSk3ZUfsH6FNEDepLx9hPQ==" referrerpolicy=no-referrer src=https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js></script><link href=style.css?20250111144206 rel=stylesheet> <body><app id=application><ons-navigator id=ons-navigator1 page=narou-list.html swipeable=""></ons-navigator></app> <template id=narou-list.html><ons-page id=ons-page1><div class=page__background id=div1></div> <ons-toolbar id=ons-toolbar1><div class=left id=div3 style="
 display: flex;
 justify-content: center;
 align-items: center;
-"> <div id=div19>Loading...</div></div></ons-modal></ons-page></template> <template id=reader.html><ons-page id=ons-page2><div class=page__background id=div20></div> <ons-toolbar id=ons-toolbar2><div class=left id=div22><ons-back-button id=ons-back-button1></ons-back-button></div> <div class=center id=div23>読み上げ</div> <div class=right id=div24 style="
+"><img height=40px id=img3 src=images/icon-192x192.png style="border-radius: 50%;" width=40px></div> <div class=center id=div4>Nデイリー</div> <div class=right id=div5 style="
+display: flex;
+justify-content: center;
+align-items: center;
+"></div></ons-toolbar><div class=page__content id=div2><template id=narou-item-template><ons-list-item class=narou-item modifier=chevron tappable=""><div class=left style="
+display: flex;
+"><ons-icon class=narou-item-icon icon=fa-book size=15px style="flex-grow: 0;
+flex-shrink: 1;
+flex-basis: auto;
+order: 0;
+align-self: auto;
+color: rgb(175, 175, 175);
+margin-right: 5px;"></ons-icon><div class=narou-item-number></div> </div> <div class=center><div class="list-item__title narou-item-title">タイトル</div> <div class="list-item__subtitle narou-item-info">作品情報</div></div></ons-list-item></template><ons-list id=narou-list modifier=inset></ons-list> </div> <ons-bottom-toolbar id=ons-bottom-toolbar2><div id=div51 style="width: 100%;
+display: flex;
+justify-content: center;
+height: 100%;"><ons-segment active-index=0 id=ons-segment1 modifier="" style="width: 100%;"><button id=button1>50</button><button id=button2>100</button><button id=button3>150</button><button id=button4>200</button><button id=button5>250</button><button id=button6>300</button></ons-segment></div></ons-bottom-toolbar><ons-modal id=ons-modal1><ons-progress-circular id=ons-progress-circular1 indeterminate modifier=""></ons-progress-circular><div id=div18 style="text-align: center"><p id=p1 style="
+display: flex;
+justify-content: center;
+align-items: center;
+"> <div class=bouncing-text id=div19 style="
+display: flex;
+justify-content: center;
+"><span id=span3>読</span><span id=span4>込</span><span id=span6>中</span><span id=span5>...</span> </div></div></ons-modal></ons-page></template> <template id=reader.html><ons-page id=ons-page2><div class=page__background id=div20></div> <ons-toolbar id=ons-toolbar2><div class=left id=div22><ons-back-button id=ons-back-button1></ons-back-button></div> <div class=center id=div23>読み上げ</div> <div class=right id=div24 style="
 display: flex;
 justify-content: center;
 align-items: center;
 "><ons-toolbar-button icon=fa-gear id=ons-toolbar-button2></ons-toolbar-button></div></ons-toolbar><div class=page__content id=div21><template class=narou-read-item-template id=narou-read-item-template><ons-list-item class=narou-read-list-item modifier=nodivider tappable=""><div class=center><div class=list-item_p></div></div></ons-list-item></template><ons-list-header id=ons-list-header2><a id=ons-list-header-link target=blank></a></ons-list-header><ons-list class=detail-item id=detail-list></ons-list><div id=div36 style="
 display: flex;
 justify-content: center;
-"><ons-progress-circular id=ons-progress-circular2 indeterminate></ons-progress-circular></div> </div> <ons-bottom-toolbar id=ons-bottom-toolbar1><div id=div37 style="width: 100%;
+"><ons-progress-circular id=ons-progress-circular2></ons-progress-circular></div> </div> <ons-bottom-toolbar id=ons-bottom-toolbar1><div id=div37 style="width: 100%;
 display: flex;
 height: 100%;"><ons-toolbar-button icon=fa-chevron-left id=prev-page-button style="
 display: flex;
@@ -44,6 +63,13 @@ flex-shrink: 1;
 flex-basis: auto;
 order: 2;
 align-self: auto;
-"></ons-toolbar-button></div></ons-bottom-toolbar></ons-page></template> <script src=main.js?20250111104948 type=module></script><script>if ('serviceWorker' in navigator) {
+"></ons-toolbar-button></div></ons-bottom-toolbar><ons-modal id=ons-modal2 visible><ons-progress-circular id=ons-progress-circular3 indeterminate modifier=""></ons-progress-circular><div id=div52 style="text-align: center"><p id=p4 style="
+display: flex;
+justify-content: center;
+align-items: center;
+"> <div class=bouncing-text id=div53 style="
+display: flex;
+justify-content: center;
+"><span id=span7>読</span><span id=span8>込</span><span id=span9>中</span><span id=span10>...</span> </div></div></ons-modal></ons-page></template> <script src=main.js?20250111144206 type=module></script><script>if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('service-worker.js');
 }</script>
