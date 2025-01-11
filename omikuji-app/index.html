@@ -1,0 +1,14 @@
+<!DOCTYPE html><html lang=ja><head><meta content=Pwappyで作成されたPWAアプリ name=description><title>おみくじ</title><meta charset=UTF-8><meta content="IE=edge" http-equiv=X-UA-Compatible><meta content="width=device-width, initial-scale=1.0" name=viewport><link href=favicon.ico rel=icon sizes=32x32><link href="images/icon.svg?v=20250111221437" rel=icon type=image/svg+xml><link href="images/apple-touch-icon.png?v=20250111221437" rel=apple-touch-icon><link href="manifest.webmanifest?v=20250111221437" rel=manifest><script defer src=https://cdn.jsdelivr.net/npm/holderjs@2.9.9/holder.min.js></script><link crossorigin=anonymous href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css referrerpolicy=no-referrer rel=stylesheet><link href=https://unpkg.com/onsenui/css/onsenui.min.css rel=stylesheet><link href=https://unpkg.com/onsenui/css/onsen-css-components.min.css rel=stylesheet><script src=https://unpkg.com/onsenui/js/onsenui.min.js></script><script>if (ons.platform.isIPhoneX()) {
+        document.documentElement.setAttribute('onsflag-iphonex-portrait', '');
+        document.documentElement.setAttribute('onsflag-iphonex-landscape', '');
+    }
+    ons.disableIconAutoPrefix();</script><link href=style.css?20250111221437 rel=stylesheet> <body><app id=application><ons-navigator id=ons-navigator1 page=page1.html swipeable=""></ons-navigator></app> <template id=page1.html><ons-page id=ons-page1><div class=page__background id=div1 style="background-color: rgb(189, 203, 223);"></div> <div class=page__content id=div2 style="overflow-y: hidden;"><div id=result style="position: absolute;"></div> <div class=image-container id=div3 style="display: flex;
+justify-content: center;"><img height=100% id=img1 src=images/omikuji_back.png style="position: absolute;" width=""><img height=100% id=omikuji_stick_daikichi src=images/omikuji_daikichi.png style="position: absolute;
+transform: translateY(300px);" width=""><img height=100% id=omikuji_stick_cyuukichi src=images/omikuji_cyuukichi.png style="position: absolute;
+transform: translateY(300px);" width=""><img height=100% id=omikuji_stick_syoukichi src=images/omikuji_syoukichi.png style="position: absolute;
+transform: translateY(300px);" width=""><img height=100% id=omikuji_stick_kichi src=images/omikuji_kichi.png style="position: absolute;
+transform: translateY(300px);" width=""><img height=100% id=omikuji_stick_kyou src=images/omikuji_kyou.png style="position: absolute;
+transform: translateY(300px);" width=""><img height=100% id=omikuji_stick_daikyou src=images/omikuji_daikyou.png style="position: absolute;
+transform: translateY(300px);" width=""><img height=100% id=img3 src=images/omikuji_front.png style="position: absolute;" width=""> </div></div></ons-page></template> <script src=main.js?20250111221437 type=module></script><script>if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js');
+}</script>
