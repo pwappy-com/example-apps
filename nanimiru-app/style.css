@@ -1,1 +1,56 @@
-.kosugi-maru-regular{font-family:"Kosugi Maru",serif;font-weight:400;font-style:normal}:root{--material-progress-bar-primary-color:#fffafa;--material-progress-bar-secondary-color:#ffffff}.bouncing-text{display:flex}.bouncing-text span{display:inline-block;animation:bounce 1s ease-in-out infinite}.bouncing-text span:nth-child(1){animation-delay:0s}.bouncing-text span:nth-child(2){animation-delay:0.1s}.bouncing-text span:nth-child(3){animation-delay:0.2s}.bouncing-text span:nth-child(4){animation-delay:0.3s}.bouncing-text span:nth-child(5){animation-delay:0.4s}@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.kosugi-maru-regular {
+    font-family: "Kosugi Maru", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+:root {
+    --material-progress-bar-primary-color: #fffafa;
+    --material-progress-bar-secondary-color: #ffffff;
+}
+
+.bouncing-text {
+    display: flex;
+    /* インライン要素を横並びにする */
+}
+
+.bouncing-text span {
+    display: inline-block;
+    /* 各文字をブロック要素のように扱う */
+    animation: bounce 1s ease-in-out infinite;
+    /* アニメーションの適用 */
+}
+
+/* 文字ごとにアニメーションの遅延を設定 */
+.bouncing-text span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.bouncing-text span:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.bouncing-text span:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.bouncing-text span:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+.bouncing-text span:nth-child(5) {
+    animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
