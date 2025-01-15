@@ -2,7 +2,7 @@ function 定数() {
     
 }
 
-const serverBase = "https://script.google.com/macros/s/AKfycbwz41iwSWncym4L0mU4FRN9A8Bs8HVUAHKHdbAvW9pCqSFxiKs_SlX2rEaIK254L7XK_g/exec";
+const serverBase = "https://script.google.com/macros/s/AKfycbwFsQocPUk6ExzwxZkhWEtdoY9RFAllNUq3mVc9QX8AIURqNdUJh3jfABDeVr7AnmprgQ/exec";
 
 //8B
 //const serverBase = "https://script.google.com/macros/s/AKfycbyAXBQQFrDREpLDNti_7SZ024Jl4Vby-vWQKpeBkZfkm9dTjEDRYHTGDhJqSPD-O_MKwQ/exec";
