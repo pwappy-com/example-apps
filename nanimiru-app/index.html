@@ -7,10 +7,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="favicon.ico" sizes="32x32">
-<link rel="icon" href="images/icon.svg?v=20250116002124" type="image/svg+xml">
-<link rel="apple-touch-icon" href="images/apple-touch-icon.png?v=20250116002124">
+<link rel="icon" href="images/icon.svg?v=20250116003501" type="image/svg+xml">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png?v=20250116003501">
 
-<link rel="manifest" href="manifest.webmanifest?v=20250116002124">
+<link rel="manifest" href="manifest.webmanifest?v=20250116003501">
 
 <!-- holderjs -->
 <script defer src="https://cdn.jsdelivr.net/npm/holderjs@2.9.9/holder.min.js"></script>
@@ -36,10 +36,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="style.css?20250116002124">
+<link rel="stylesheet" href="style.css?20250116003501">
 </head>
 <body>
-<app id="application"><ons-navigator id="ons-navigator1" swipeable="" page="page1.html"></ons-navigator></app>
+<app id="application"><ons-splitter id="ons-splitter1"><ons-splitter-side id="ons-splitter-side1" side="left" width="220px" swipeable="" collapse="collapse" page="menu.html"></ons-splitter-side><ons-splitter-content id="ons-splitter-content1" page="page1.html"></ons-splitter-content></ons-splitter></app>
 <template id="page1.html"><ons-page id="ons-page1"><div id="div1" class="page__background"></div>
 <div id="div2" class="page__content">
 <div id="div18" style="position: sticky;
@@ -145,7 +145,11 @@ text-align: center;
 <p id="p12">質問ボタンを押す</p>
 <p id="p13"><ons-button id="ons-button9" class="ok-button">OK</ons-button></p>
 </div></ons-popover></ons-page></template>
-<script src="main.js?20250116002124" type="module"></script><script>if ('serviceWorker' in navigator) {
+<template id="menu.html"><ons-page id="ons-page2"><div id="div57" class="page__background"></div>
+<div id="div58" class="page__content"><ons-list id="ons-list1"><ons-list-item id="ons-list-item1"><div id="div59" class="left"><ons-icon id="ons-icon7" icon="fa-undo"></ons-icon></div>
+<div id="div60" class="center"><div id="div61" class="list-item__title">設定リセット</div></div>
+<div id="div63" class="right"></div></ons-list-item></ons-list></div></ons-page></template>
+<script src="main.js?20250116003501" type="module"></script><script>if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('service-worker.js');
 }
 </script>

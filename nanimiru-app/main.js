@@ -464,6 +464,24 @@ function 初回起動時(event) {
     }
 }
 
+function 設定リセット(event) {
+    // リセットしてよいかの確認ダイアログを表示して、OKボタンが押されたらlocalStorageのnanimiru-appをすべて削除する
+    // リセット確認ダイアログを表示
+    ons.notification.confirm({
+        message: '設定をリセットしますか？',
+        title: '確認',
+        buttonLabels: ['キャンセル', 'OK'],
+        callback: (index) => {
+            if (index === 1) { // OKボタンが押された場合
+                localStorage.removeItem('nanimiru-app');
+                
+                //リロードする
+                location.reload();
+            }
+        }
+    });
+}
+
 document.addEventListener('init', (event) => {
     let page = event.target;
     if (page.id === 'ons-page1') {
@@ -484,5 +502,17 @@ document.addEventListener('init', (event) => {
         地域マスタ取得(event);
         初期アクション実行(event);
         初回起動時(event);
+    }
+});
+document.addEventListener('init', (event) => {
+    let page = event.target;
+    if (page.id === 'ons-page2') {
+        let onslistitem1_element = document.querySelector('#ons-list-item1');
+        if(onslistitem1_element) {
+            onslistitem1_element.addEventListener('click', 設定リセット);
+            page.addEventListener('destroy', function(event) {
+                onslistitem1_element.removeEventListener('click', 設定リセット);
+            }, { 'once' : true });
+        }
     }
 });
