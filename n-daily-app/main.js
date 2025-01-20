@@ -1,5 +1,5 @@
 function 設定値(){}
-const urlBase='https://ncode.syosetu.com';const fetchBase='https://script.google.com/macros/s/AKfycbwEcOw9gDFCGOwUlT_FnMmarCv92dx1snan5Sxce1b9v1A2qBgIimWX1pB0kj6tqa0xDg/exec'
+const urlBase='https://ncode.syosetu.com';const fetchBase='https://script.google.com/macros/s/AKfycbwqwwbtT_VEFRCfwR4D_jL0tcnXlWTcZiNPx7Xn5M_YPlFfTV3IP2DMzuoSGNcujpgT0w/exec'
 if(!localStorage.getItem('volume')){localStorage.setItem('volume',100)}
 if(!localStorage.getItem('rate')){localStorage.setItem('rate',1)}
 if(!localStorage.getItem('pageAheadCount')){localStorage.setItem('pageAheadCount',0)}
