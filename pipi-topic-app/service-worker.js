@@ -9,7 +9,9 @@ async function svGetAllStoreValue(db,storeName){return new Promise((resolve,reje
 async function svDeleteStoreValue(db,storeName,key){return new Promise((resolve,reject)=>{const tx=db.transaction(storeName,'readwrite');const store=tx.objectStore(storeName);const request=store.delete(key);request.onsuccess=(event)=>{resolve(event.target.result)};tx.onerror=(event)=>{reject(event.target.error)};tx.onabort=(event)=>{reject(new Error(`Transaction aborted: ${event.target.error?.message || 'Unknown reason'}`))}})}
 async function svDeleteIndexedDB(dbName){return new Promise((resolve,reject)=>{const request=indexedDB.deleteDatabase(dbName);request.onsuccess=()=>{console.log("IndexedDB deleted successfully.");resolve()};request.onerror=(event)=>{console.error("Error deleting IndexedDB:",event.target.error);reject(event.target.error)}})}
 async function svCloseDB(db){return new Promise((resolve,reject)=>{db.close();resolve()})}
-function プッシュ通知クリック(event){event.notification.close();event.waitUntil(clients.matchAll({type:'window',includeUncontrolled:!0}).then(function(clientList){for(var i=0;i<clientList.length;i++){var client=clientList[i];if(client.url=='/i0iv7dv/pipi-topic-app/1.0.0/'&&'focus' in client)
+function プッシュ通知クリック(event){event.notification.close();event.waitUntil(clients.matchAll({type:'window',includeUncontrolled:!0}).then(function(clientList){debugger
+for(var i=0;i<clientList.length;i++){var client=clientList[i];if(client.url==='https://dev.pwappy.com/i0iv7dv/pipi-topic-app/1.0.0/'&&'focus' in client)
+return client.focus();if(client.url==='https://pwappy-com.github.io/example-apps/pipi-topic-app/'&&'focus' in client)
 return client.focus();}
-return clients.openWindow('/i0iv7dv/pipi-topic-app/1.0.0/')}))}
+return clients.openWindow('https://pwappy-com.github.io/example-apps/pipi-topic-app/')}))}
 self.addEventListener("push",(event)=>{プッシュ受信(event)});self.addEventListener("notificationclick",(event)=>{プッシュ通知クリック(event)})
