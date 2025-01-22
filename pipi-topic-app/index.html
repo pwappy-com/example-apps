@@ -1,0 +1,164 @@
+<!DOCTYPE html><html lang=ja><head><meta content=Pwappyで作成されたニュース通知アプリ name=description><title>ピピトピック</title><meta charset=UTF-8><meta content="IE=edge" http-equiv=X-UA-Compatible><meta content="width=device-width, initial-scale=1.0" name=viewport><link href=favicon.ico rel=icon sizes=32x32><link href="images/icon.svg?v=20250122202012" rel=icon type=image/svg+xml><link href="images/apple-touch-icon.png?v=20250122202012" rel=apple-touch-icon><link href="manifest.webmanifest?v=20250122202012" rel=manifest><script defer src=https://cdn.jsdelivr.net/npm/holderjs@2.9.9/holder.min.js></script><link crossorigin=anonymous href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css referrerpolicy=no-referrer rel=stylesheet><link href=https://unpkg.com/onsenui/css/onsenui.min.css rel=stylesheet><link href=https://unpkg.com/onsenui/css/onsen-css-components.min.css rel=stylesheet><script src=https://unpkg.com/onsenui/js/onsenui.min.js></script><script>if (ons.platform.isIPhoneX()) {
+        document.documentElement.setAttribute('onsflag-iphonex-portrait', '');
+        document.documentElement.setAttribute('onsflag-iphonex-landscape', '');
+    }
+    ons.disableIconAutoPrefix();</script><script type=module>// Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-analytics.js";
+  import { getMessaging, getToken } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-messaging.js";
+  
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyA5sd6vB8C2pm1YU8lcwl-DsSuA6jmOvZs",
+    authDomain: "push-sample-app-2bd48.firebaseapp.com",
+    projectId: "push-sample-app-2bd48",
+    storageBucket: "push-sample-app-2bd48.firebasestorage.app",
+    messagingSenderId: "64670652133",
+    appId: "1:64670652133:web:e69eecc7386451fbbe660c",
+    measurementId: "G-Q8VPZLZXJ0"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);</script><link href=https://fonts.googleapis.com rel=preconnect><link crossorigin="" href=https://fonts.gstatic.com rel=preconnect><link href="https://fonts.googleapis.com/css2?family=Palette+Mosaic&display=swap" rel=stylesheet><link href=style.css?20250122202012 rel=stylesheet> <body><app id=application><ons-navigator id=ons-navigator1 page=topic-list.html></ons-navigator></app> <template id=topic-list.html><ons-page id=ons-page1><div class=page__background id=div1></div> <ons-toolbar id=ons-toolbar2><div class=left id=topic-page-toolbar-left style="display: flex;
+justify-content: center;
+align-items: center;"><ons-toolbar-button icon=fa-bell id=bell-button style="display: none;"></ons-toolbar-button></div> <div class="center train-one-regular" id=div16 style="
+display: flex;
+align-items: center;
+"><span class=palette-mosaic-regular id=span22 style="flex-grow: 0;
+flex-shrink: 1;
+flex-basis: auto;
+order: -1;
+align-self: auto;
+color: red;
+font-size: 24px;">ト</span><span class=palette-mosaic-regular id=span23 style="flex-grow: 0;
+flex-shrink: 1;
+flex-basis: auto;
+order: -1;
+align-self: auto;">ピ</span><span class=palette-mosaic-regular id=span24 style="flex-grow: 0;
+flex-shrink: 1;
+flex-basis: auto;
+order: -1;
+align-self: auto;">ッ</span><span class=palette-mosaic-regular id=span25 style="flex-grow: 0;
+flex-shrink: 1;
+flex-basis: auto;
+order: -1;
+align-self: auto;">ク</span><img height=40 id=img1 src=images/icon-192x192.png style="flex-grow: 0;
+flex-shrink: 1;
+flex-basis: auto;
+order: -2;
+align-self: auto;
+border-radius: 50%;" width=40> </div> <div class=right id=topic-page-toolbar-right style="
+display: flex;
+align-items: center;
+justify-content: center;
+"><ons-toolbar-button icon=fa-gear id=ons-toolbar-button-setting style="display: none;"></ons-toolbar-button></div></ons-toolbar><div class=page__content id=div2><ons-pull-hook fixed-content="" height="" id=ons-pull-hook1 threshold-height=200px><ons-progress-circular id=ons-progress-circular3 indeterminate></ons-progress-circular></ons-pull-hook><template id=template-topic-list-item><ons-card class=topic-list-item-card><div style="
+display: flex;
+justify-content: flex-start;
+"><div><ons-icon icon=fa-bell id=ons-icon12 style="flex-grow: 0;
+flex-shrink: 1;
+flex-basis: auto;
+order: 1;
+align-self: auto;
+margin-left: 5px;"></ons-icon><span class=sawarabi-gothic-regular>キーワード：</span><span class="sawarabi-gothic-regular topic-list-item-keywords">news</span> </div></div> <hr id=hr1> <a class="sawarabi-gothic-regular topic-list-item-title" id=a1 target=blank></a><div class=content><hr> <div><div style="display: flex;
+flex-direction: column;"><span class=sawarabi-gothic-regular style="display: flex;
+margin-bottom: 5px;">概要</span><span class="sawarabi-gothic-regular topic-list-item-summary">サマリー</span> </div></div> <hr> <div class=sawarabi-gothic-regular style="display: flex;
+justify-content: flex-end;"><div><span>通知日時：</span><span class=topic-list-item-time>20:05</span> </div></div> <div style="display: flex;
+justify-content: center;
+margin-top: 10px;"><ons-button class=read-button modifier="outline large">既読</ons-button></div></div></ons-card></template><ons-list-title class=sawarabi-gothic-regular id=ons-list-title1>トピックリスト</ons-list-title><ons-list class="ons-list-topic sawarabi-gothic-regular" id=ons-list-topic style="background-color: rgb(160, 172, 189);">通知されたトピックはありません</ons-list> </div> <ons-modal id=ons-modal3><ons-progress-circular id=ons-progress-circular2 indeterminate modifier=""></ons-progress-circular><div id=div37 style="text-align: center"><p id=p12 style="
+display: flex;
+justify-content: center;
+align-items: center;
+"> <div class=bouncing-text id=div38 style="
+display: flex;
+justify-content: center;
+"><span id=span16>読</span><span id=span17>込</span><span id=span18>中</span><span id=span19>...</span> </div> <p id=p13></div></ons-modal><ons-dialog cancelable="" id=ons-dialog-setting modifier=transparent><div class=dialog__title id=div31 style="display: flex;
+justify-content: center;
+align-items: center;
+margin-top: 10px;"><ons-icon icon=fa-info-circle id=ons-icon13 size="" style="margin-right: 10px;"></ons-icon><span class=sawarabi-gothic-regular id=span13>選択してください</span> </div> <div class=dialog__content id=div32 style="display: flex;
+flex-direction: column;
+align-items: center;
+gap: 10px;"><ons-button class=sawarabi-gothic-regular id=ons-button-show-keyword modifier=large--quiet style="margin-top: 10px;">キーワード設定</ons-button><ons-button class=sawarabi-gothic-regular id=ons-button-show-app-setting modifier=large--quiet style="margin-bottom: 10px;">アプリ設定</ons-button> </div></ons-dialog><ons-popover cancelable="" direction=down id=ons-popover-bell target=topic-page-toolbar-left><div id=div33 style="
+padding: 10px;
+text-align: center;
+"><p id=p5>「ベル」ボタンを押して通知を許可 <p id=p6></div></ons-popover><ons-popover cancelable="" direction=down id=ons-popover-setting target=topic-page-toolbar-right><div id=div36 style="padding: 10px;
+text-align: center;"><p id=p10>「設定」ボタンを押してキーワードを追加 <p id=p11></div></ons-popover><ons-alert-dialog id=ons-alert-dialog-init-message><div class=alert-dialog-title id=div58>注意</div> <div class=alert-dialog-content id=div59><p id=p17 style="font-size: 12px;">本アプリはYahoo!ニュースの新着にキーワードが現れたらPush通知を行うアプリです。 <p id=p15 style="font-size: 12px;">Yahoo!及びYahoo!ニュースとは関係のない野良アプリです <p id=p16 style="font-size: 12px;">問題ない方だけ次へ進んでください</div> <div class=alert-dialog-footer id=div60><ons-alert-dialog-button id=ons-alert-dialog-button-init-next>OK</ons-alert-dialog-button></div></ons-alert-dialog></ons-page></template> <template id=keyword.html><ons-page id=ons-page2><div class=page__background id=div3></div> <ons-toolbar id=ons-toolbar1><div class=left id=div5><ons-back-button id=ons-back-button2></ons-back-button></div> <div class="center palette-mosaic-regular" id=div6><span class=palette-mosaic-regular id=span26 style="flex-grow: 0;
+flex-shrink: 1;
+flex-basis: auto;
+order: -1;
+align-self: auto;
+color: red;
+font-size: 24px;">キ</span><span class=palette-mosaic-regular id=span27 style="flex-grow: 0;
+flex-shrink: 1;
+flex-basis: auto;
+order: -1;
+align-self: auto;">ーワード</span> </div> <div class=right id=div7></div></ons-toolbar><div class=page__content id=div4><template id=list-item-keyword-template><ons-list-item class=ons-list-item-keyword-template><div class=left></div> <div class=center><span class=list-item-keyword-value>キーワード</span></div> <div class=right><ons-toolbar-button class=list-item-edit-button icon=fa-pen-to-square modifier=""></ons-toolbar-button></div></ons-list-item></template><ons-list id=ons-list-keyword></ons-list><ons-fab id=ons-fab-keyword-add position="bottom right"><ons-icon icon=fa-plus id=ons-icon9></ons-icon></ons-fab> </div> <ons-bottom-toolbar id=ons-bottom-toolbar1><div id=div10><ons-button class=sawarabi-gothic-regular id=ons-button-keyword-send modifier=large--cta>更新</ons-button></div></ons-bottom-toolbar><ons-dialog cancelable="" id=ons-dialog-keyword><div id=div8 style="text-align: center;
+padding: 10px;"><ons-input id=ons-keyword-input input-id=keyword-input modifier=underbar placeholder=キーワード style="margin-top: 20px;"></ons-input><div id=div9 style="display: flex;
+justify-content: space-around;
+margin-top: 10px;"><ons-button class=sawarabi-gothic-regular id=keyword-delete modifier="" style="background-color: rgb(243, 102, 102);
+color: white;">削除</ons-button><ons-button class=sawarabi-gothic-regular id=keyword-add>追加</ons-button><ons-button class=sawarabi-gothic-regular id=keyword-edit>変更</ons-button> </div> </div></ons-dialog><ons-modal id=ons-modal2 visible><ons-progress-circular id=ons-progress-circular1 indeterminate modifier=""></ons-progress-circular><div id=div13 style="text-align: center"><p id=p3 style="
+display: flex;
+justify-content: center;
+align-items: center;
+"> <div class=bouncing-text id=div14 style="
+display: flex;
+justify-content: center;
+"><span class=sawarabi-gothic-regular id=span1>読</span><span class=sawarabi-gothic-regular id=span2>込</span><span class=sawarabi-gothic-regular id=span3>中</span><span id=span4>...</span> </div> <p id=p4></div></ons-modal><ons-popover cancelable="" direction=left id=ons-popover-keyword1 target=ons-fab-keyword-add><div id=div34 style="padding: 10px;
+text-align: center;"><p id=p7>ここからキーワードを追加</div></ons-popover><ons-popover cancelable="" direction=up id=ons-popover-keyword2 target=ons-button-keyword-send><div id=div35 style="
+padding: 10px;
+text-align: center;
+"><p id=p9>キーワードを追加したら更新</div></ons-popover></ons-page></template> <template id=app-setting.html><ons-page id=ons-page3><div class=page__background id=div29></div> <ons-toolbar id=ons-toolbar3><div class=left id=div39><ons-back-button id=ons-back-button3></ons-back-button></div> <div class=center id=div40><span class=palette-mosaic-regular id=span30 style="flex-grow: 0;
+flex-shrink: 1;
+flex-basis: auto;
+order: -1;
+align-self: auto;
+color: red;
+font-size: 24px;">ア</span><span class=palette-mosaic-regular id=span31 style="flex-grow: 0;
+flex-shrink: 1;
+flex-basis: auto;
+order: -1;
+align-self: auto;">プリ設定</span> </div> <div class=right id=div41></div></ons-toolbar><div class=page__content id=div30 style="display: flex;
+justify-content: flex-start;
+align-items: stretch;
+flex-direction: column;"><ons-card id=ons-card1><div class="sawarabi-gothic-regular title" id=div42>通知時刻</div> <hr id=hr2> <div class=content id=div43><template id=template-notification-item><div class=notification-time-item style="width: 100%;"><div style="display: flex;"><ons-row style="align-items: center;
+display: flex;"><ons-col style="justify-content: flex-end;
+display: flex;"><span class=notification-time>21時</span></ons-col><ons-col style="justify-content: flex-end;
+display: flex;"><ons-button class=notification-time-delete style="border-radius: 50%;
+width: 40px;
+display: flex;
+align-items: center;
+justify-content: center;
+height: 40px;
+background-color: rgb(245, 108, 108);"><ons-icon icon=fa-trash></ons-icon></ons-button></ons-col></ons-row></div> <hr style="width: 60%;"></div></template><div class=notification-time-list id=notification-time-list></div> <div id=div48 style="justify-content: flex-end;
+display: flex;
+margin-top: 10px;"><ons-button id=ons-button-add-notification-time style="border-radius: 50%;
+width: 40px;
+display: flex;
+align-items: center;
+justify-content: center;
+height: 40px;"><ons-icon icon=fa-plus id=ons-icon15></ons-icon></ons-button></div></div></ons-card><ons-card id=ons-card2><div class="sawarabi-gothic-regular title" id=div61>保存データ</div> <hr id=hr3> <div class=content id=div62><div id=div63 style="display: flex;"><div class=sawarabi-gothic-regular id=div64>端末内トピック数：</div> <div class=sawarabi-gothic-regular id=device-topic-count></div></div> <div id=div66 style="
+display: flex;
+"><div class=sawarabi-gothic-regular id=div67>使用量：</div> <div class=sawarabi-gothic-regular id=device-db-size></div></div> <div id=div69 style="display: flex;
+justify-content: center;
+margin-top: 10px;"><ons-button class=sawarabi-gothic-regular id=ons-button3>削除</ons-button></div></div></ons-card> </div> <ons-dialog cancelable="" id=ons-dialog-notification-time><div id=div70 style="text-align: center;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 10px;"><p id=p18>時間を選択(分は指定できません)</p> <ons-input id=ons-input-notification-time input-id=time-input modifier="" placeholder="" type=time></ons-input><ons-button id=ons-button-notification-time-add style="margin-top: 10px;">追加</ons-button> </div></ons-dialog></ons-page></template> <script src=main.js?20250122202012 type=module></script><script>if ('serviceWorker' in navigator) {
+      ons.ready(()=> {
+          navigator.serviceWorker.register('service-worker.js?20250122202012')
+          .then(registration => { 
+              const event = new CustomEvent('PwappyServiceWorkerRegistered', { detail: registration });
+              document.dispatchEvent(event);
+          })
+          .catch(registrationError => {
+              const errorEvent = new CustomEvent('PwappyServiceWorkerRegistered', { detail: { error: registrationError } });
+              document.dispatchEvent(errorEvent);
+          });
+     });
+}</script>
