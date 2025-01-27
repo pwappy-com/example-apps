@@ -1,0 +1,369 @@
+<!DOCTYPE html><html lang=ja><head><meta content=Pwappyで作成されたPWAアプリ name=description><title>俺が〇〇だ</title><meta charset=UTF-8><meta content="IE=edge" http-equiv=X-UA-Compatible><meta content="width=device-width, initial-scale=1.0" name=viewport><link href=favicon.ico rel=icon sizes=32x32><link href="images/icon.svg?v=20250127223538" rel=icon type=image/svg+xml><link href="images/apple-touch-icon.png?v=20250127223538" rel=apple-touch-icon><link href="manifest.webmanifest?v=20250127223538" rel=manifest><script defer src=https://cdn.jsdelivr.net/npm/holderjs@2.9.9/holder.min.js></script><link crossorigin=anonymous href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css referrerpolicy=no-referrer rel=stylesheet><link href=https://unpkg.com/onsenui/css/onsenui.min.css rel=stylesheet><link href=https://unpkg.com/onsenui/css/onsen-css-components.min.css rel=stylesheet><script src=https://unpkg.com/onsenui/js/onsenui.min.js></script><script>if (ons.platform.isIPhoneX()) {
+        document.documentElement.setAttribute('onsflag-iphonex-portrait', '');
+        document.documentElement.setAttribute('onsflag-iphonex-landscape', '');
+    }
+    ons.disableIconAutoPrefix();</script><script crossorigin=anonymous src=https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js></script><script crossorigin=anonymous src=https://cdn.jsdelivr.net/npm/@mediapipe/face_detection/face_detection.js></script><script crossorigin=anonymous src=https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js></script><script src=https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js></script><link href=https://fonts.googleapis.com rel=preconnect><link crossorigin="" href=https://fonts.gstatic.com rel=preconnect><link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel=stylesheet><link href="https://fonts.googleapis.com/css2?family=Stick&display=swap" rel=stylesheet><link href=style.css?20250127223538 rel=stylesheet> <body><app id=application><ons-navigator id=ons-navigator1 page=top.html swipeable=""></ons-navigator></app> <template id=photo.html><ons-page id=ons-page-photo><div class=page__background id=div3></div> <div class=page__content id=div4 style="overflow-y: hidden;"><div id=camera-container><div class=invisible id=demos><p id=p1><button id=webcamButton style="display: none;">ENABLE PREDICTIONS</button> <div id=div2 style="position: relative;
+/* width: 480px; */
+width: 100%;
+height: 100%;"><video id=webcam style="width: 100%;
+height: 100%;"></video><canvas height="" id=output_canvas style="width: 100%;
+height: 100%;
+object-fit: contain;" width=""></canvas> </div> <ul id=video-blend-shapes></ul></div></div> <span id=span-print-swipe-message1 style="position: fixed;
+width: 100%;
+justify-content: center;
+align-items: center;
+bottom: 180px;
+display: none;
+text-shadow:
+-2px -2px 2px #fff,
+-1px -2px 2px #fff,
+0px -2px 2px #fff,
+1px -2px 2px #fff,
+2px -2px 2px #fff,
+-2px -1px 2px #fff,
+2px -1px 2px #fff,
+-2px 0px 2px #fff,
+2px 0px 2px #fff,
+-2px 1px 2px #fff,
+2px 1px 2px #fff,
+-2px 2px 2px #fff,
+-1px 2px 2px #fff,
+0px 2px 2px #fff,
+1px 2px 2px #fff,
+2px 2px 2px #fff;">スワイプしてお面を移動</span><span id=span-print-swipe-message2 style="position: fixed;
+width: 100%;
+justify-content: center;
+align-items: center;
+bottom: 150px;
+display: none;
+text-shadow:
+-2px -2px 2px #fff,
+-1px -2px 2px #fff,
+0px -2px 2px #fff,
+1px -2px 2px #fff,
+2px -2px 2px #fff,
+-2px -1px 2px #fff,
+2px -1px 2px #fff,
+-2px 0px 2px #fff,
+2px 0px 2px #fff,
+-2px 1px 2px #fff,
+2px 1px 2px #fff,
+-2px 2px 2px #fff,
+-1px 2px 2px #fff,
+0px 2px 2px #fff,
+1px 2px 2px #fff,
+2px 2px 2px #fff;">ピンチイン・ピンチアウトで拡大縮小</span><span id=span-processing-message style="position: fixed;
+width: 100%;
+justify-content: center;
+align-items: center;
+bottom: 150px;
+display: none;
+text-shadow:
+-2px -2px 2px #fff,
+-1px -2px 2px #fff,
+0px -2px 2px #fff,
+1px -2px 2px #fff,
+2px -2px 2px #fff,
+-2px -1px 2px #fff,
+2px -1px 2px #fff,
+-2px 0px 2px #fff,
+2px 0px 2px #fff,
+-2px 1px 2px #fff,
+2px 1px 2px #fff,
+-2px 2px 2px #fff,
+-1px 2px 2px #fff,
+0px 2px 2px #fff,
+1px 2px 2px #fff,
+2px 2px 2px #fff;">処理中です...しばらくお待ち下さい</span><div id=div38 style="position: fixed;
+display: flex;
+width: 100%;
+justify-content: space-around;
+bottom: 100px;"><div id=div40 style="display: flex;
+justify-content: space-between;
+width: 90%;"><ons-button id=ons-button-mask modifier="" style="border-radius: 100%;
+width: 50px;
+display: flex;
+align-items: center;
+justify-content: center;
+height: 50px;"><ons-icon icon=fa-mask id=ons-icon5 style="font-size: 20px;"></ons-icon></ons-button><ons-button id=ons-button-comp style="border-radius: 100%;
+width: 50px;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+height: 50px;
+padding: 0;"><div id=div39 style="width: 70%;
+height: 15px;
+background-color: black;
+font-size: 8px;
+display: flex;
+align-items: center;
+justify-content: center;
+color: white;
+font-weight: 900;">コンプラ</div></ons-button> </div></div> <div id=div-camera-container style="position: fixed;
+display: flex;
+width: 100%;
+justify-content: space-evenly;
+bottom: 30px;"><ons-button id=ons-button-camera-rotate modifier="" style="border-radius: 100%;
+width: 50px;
+display: none;
+align-items: center;
+justify-content: center;
+height: 50px;"><ons-icon icon=fa-rotate id=ons-icon1 style="font-size: 20px;"></ons-icon></ons-button><ons-button id=ons-button-camera-exec style="border-radius: 100%;
+width: 50px;
+display: flex;
+align-items: center;
+justify-content: center;
+height: 50px;"><ons-icon icon=fa-camera id=ons-icon4 style="font-size: 20px;"></ons-icon></ons-button><ons-button id=ons-button-movie-exec style="border-radius: 100%;
+width: 50px;
+display: flex;
+align-items: center;
+justify-content: center;
+height: 50px;"><ons-icon icon=fa-video id=ons-icon-movie-exec style="font-size: 20px;"></ons-icon><ons-icon icon=fa-stop id=ons-icon-movie-stop style="font-size: 20px;
+display: none;"></ons-icon></ons-button> </div> <img id=overlay-image src=images/%E3%81%8A%E9%9D%A2%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB1.png style="display: none;"><div id=error-message style="display: none;"></div> </div> <ons-modal id=ons-modal-satuei><ons-progress-circular id=ons-progress-circular2 indeterminate modifier=""></ons-progress-circular><div id=div36 style="text-align: center"><p id=p4 style="
+display: flex;
+justify-content: center;
+align-items: center;
+"> <div class=bouncing-text id=div37 style="
+display: flex;
+justify-content: center;
+"><span id=span9>処</span><span id=span10>理</span><span id=span11>中</span><span id=span12>...</span> </div> <p id=p5></div></ons-modal></ons-page></template> <template id=omen.html><ons-page id=ons-page2><div class=page__background id=div5></div> <ons-toolbar id=ons-toolbar1><div class=left id=div17></div> <div class=center id=div18>お面撮影</div> <div class=right id=div19></div></ons-toolbar><div class=page__content id=div6><div class=camera-container id=div15><style id=style3>body {
+    font-family: sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+}
+
+
+video {
+    width: 100%;
+    max-width: 480px;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    background-color: #000;
+}
+
+.controls button {
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.controls button:hover {
+    background-color: #0056b3;
+}
+
+#message {
+    margin-top: 10px;
+    color: #555;
+}</style> <video autoplay id=camera-preview playsinline=""></video><canvas id=captured-image style="display: none;"></canvas><div class=controls id=div16><ons-button id=ons-button-image-read>読込</ons-button><button id=switch-camera-button>カメラ切り替え</button><button id=capture-button>撮影</button><ons-button id=ons-button-push-delete-background-page style="display: none;">背景削除</ons-button><div id=message></div> </div> <canvas id=display-canvas></canvas></div></div></ons-page></template> <template id=background-delete.html><ons-page id=ons-page3><div class=page__background id=div20></div> <ons-toolbar id=ons-toolbar2><div class=left id=div22><ons-back-button id=ons-back-button2></ons-back-button></div> <div class=center id=div23>背景削除</div> <div class=right id=div24></div></ons-toolbar><div class=page__content id=div21 style="display: flex;
+flex-direction: column;"><div id=div27 style="justify-content: flex-end;
+display: flex;
+margin-top: 10px;
+flex-wrap: wrap;
+flex-grow: 0;
+flex-shrink: 1;
+flex-basis: auto;
+order: 0;
+align-self: auto;
+align-content: flex-start;
+flex-direction: column;
+margin-bottom: 10px;
+position: relative;"><ons-carousel auto-scroll="" id=ons-carousel1 item-height="" item-width=100px modifier="" overscrollable="" style="width: 100%;" swipeable=""><ons-carousel-item id=ons-carousel-item5 style="margin-right: 5px;"><ons-button class="bg-del-menu-button selected" id=ons-button-cutout><ons-icon icon=fa-scissors id=ons-icon28 size=20px style="margin: 0;
+padding: 0;
+margin-bottom: 25px;
+width: 15px;
+height: 15px;"></ons-icon><span id=span14 style="line-height: 0;">切り抜き</span></ons-button></ons-carousel-item><ons-carousel-item id=ons-carousel-item11><ons-button class=bg-del-menu-button id=ons-button-color-range-select style="margin-right: 5px;"><ons-icon icon="" id=ons-icon27 style="margin: 0;
+padding: 0;
+margin-bottom: 15px;
+border: 3px dashed rgb(255, 255, 255);
+width: 15px;
+height: 15px;"></ons-icon><span id=span22 style="line-height: 0;">色域選択</span></ons-button></ons-carousel-item><ons-carousel-item id=ons-carousel-item7><ons-button class=bg-del-menu-button id=ons-button-finger-selection style="margin-right: 5px;"><ons-icon icon=fa-hand-point-down id=ons-icon15 size=20px style="margin: 0;
+padding: 0;
+margin-bottom: 25px;
+width: 15px;
+height: 15px;"></ons-icon><span id=span15 style="line-height: 0;">指で選択</span></ons-button></ons-carousel-item><ons-carousel-item id=ons-carousel-item8><ons-button class=bg-del-menu-button id=ons-button-finger-deselection style="margin-right: 5px;"><ons-icon icon="" id=ons-icon19 style="margin: 0;
+padding: 0;
+margin-bottom: 15px;
+border: 3px dotted rgb(255, 255, 255);
+width: 10px;
+height: 10px;
+border-radius: 50%;"></ons-icon><span id=span18 style="line-height: 0;">選択解除</span></ons-button></ons-carousel-item><ons-carousel-item id=ons-carousel-item9><ons-button class=bg-del-menu-button id=ons-button-background-delete style="margin-right: 5px;"><ons-icon icon="" id=ons-icon29 style="margin: 0;
+padding: 0;
+margin-bottom: 15px;
+border: 3px dotted rgb(255, 255, 255);
+width: 10px;
+height: 10px;"></ons-icon><span id=span-background-delete style="line-height: 0;">背景削除</span></ons-button></ons-carousel-item><ons-carousel-item id=ons-carousel-item12><ons-button class=bg-del-menu-button id=ons-button-bgdel-redo style="margin-right: 5px;"><ons-icon icon=fa-rotate-left id=ons-icon34 size=20px style="margin: 0;
+padding: 0;
+margin-bottom: 25px;
+width: 15px;
+height: 15px;"></ons-icon><span id=span24 style="line-height: 0;">１つ戻る</span></ons-button></ons-carousel-item><ons-carousel-item id=ons-carousel-item10><ons-button class=bg-del-menu-button id=ons-button-background-save><ons-icon icon=fa-floppy-disk id=ons-icon24 size=20px style="margin: 0;
+padding: 0;
+margin-bottom: 25px;
+width: 15px;
+height: 15px;"></ons-icon><span id=span21 style="line-height: 0;">保存</span></ons-button></ons-carousel-item></ons-carousel><div id=div-bgdel-swipe-message style="
+display: flex;
+justify-content: space-between;
+"><ons-icon icon=fa-chevron-left id=ons-icon30></ons-icon><span id=span23 style="display: flex;
+justify-content: center;
+bottom: 0;
+padding: 0;
+font-size: 12px;">スワイプでメニューを移動</span><ons-icon icon=fa-chevron-right id=ons-icon31></ons-icon> </div> <div class=bg-del-option id=div-cutout-options style="display: none;"><label for=color-range id=label2>画像の範囲を選択して切り抜きます</label><div id=div55 style="display: flex;
+justify-content: space-evenly;
+width: 100%;"><ons-button id=ons-button17 style="border-radius: 20px;">切り抜き実行</ons-button></div> </div> <div class=bg-del-option id=div-bgdel-color-range-option style="display: none;"><label for=color-range id=label1>色域範囲</label><ons-range id=ons-range-bgdel-color input-id=color-range max=255 min=0 step=1 style="width: 80%;"></ons-range> </div> <div class=bg-del-option id=div-finger-selection-option style="display: none;"><label for=touch-range id=label-touch-range>選択範囲</label><ons-range id=ons-range-touch-range input-id=touch-range max=50 min=1 step=1 style="width: 80%;" value=20></ons-range> </div></div> <div class=camera-container id=div25 style="position: relative;
+max-width: 100%;
+max-height: 100%;
+margin-left: 10px;
+margin-right: 10px;
+order: 1;
+align-self: auto;
+justify-content: center;"><canvas id=canvas-checker style="position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: -1;
+display: none;"></canvas><canvas class=canvas-omen-check id=canvas-origin-omen></canvas> </div></div> <ons-modal id=ons-modal-bg-delete><ons-progress-circular id=ons-progress-circular1 indeterminate modifier=""></ons-progress-circular><div id=div28 style="text-align: center"><p id=p2 style="
+display: flex;
+justify-content: center;
+align-items: center;
+"> <div class=bouncing-text id=div29 style="
+display: flex;
+justify-content: center;
+"><span id=span1>処</span><span id=span2>理</span><span id=span3>中</span><span id=span4>...</span> </div> <p id=p3></div></ons-modal></ons-page></template> <template id=top.html><ons-page id=ons-page4><div class=page__background id=div30></div> <div class=page__content id=div31 style="display: flex;
+flex-direction: column;"><h1 id=h11 style="display: flex;
+justify-content: center;
+align-items: flex-end;
+font-size: 30px;
+margin-top: 0;
+margin-bottom: 0;"><div id=div52 style="flex-grow: 0.8;
+flex-shrink: 1;
+flex-basis: auto;
+order: 1;
+display: flex;
+justify-content: center;
+align-items: flex-end;
+align-self: auto;"><span class=potta-one-regular id=span5 style="color: red;
+font-size: 50px;
+margin-top: 0px;
+rotate: -10deg;">俺</span><span class=potta-one-regular id=span6>が◯◯だ！！</span> </div> <div id=div51 style="flex-grow: 0;
+flex-shrink: 1;
+flex-basis: auto;
+order: 1;
+align-self: auto;
+display: flex;
+align-items: center;
+justify-content: center;
+height: 100%;"><ons-button id=ons-button-setting-gear modifier=outline style="border: 0;"><ons-icon icon=fa-gear id=ons-icon13 style="font-size: 20px;"></ons-icon></ons-button></div></h1> <div class=stick-regular id=div35 style="display: flex;
+justify-content: center;"><span id=span7>好きなお面をかぶろう</span></div> <div id=div32 style="display: flex;
+justify-content: center;
+flex-grow: 1;
+flex-shrink: 1;
+flex-basis: auto;
+order: 1;
+align-self: auto;
+align-items: center;
+background-color: rgb(188, 199, 197);
+flex-direction: column;
+border-radius: 20px;"><template id=template-carousel-item><ons-carousel-item style="justify-content: center;
+align-items: center;
+display: flex;"><img class=omen-carousel-image src="" style="max-height: 80%;
+min-width: 80%;
+object-fit: fill;" width=""></ons-carousel-item></template><ons-carousel auto-scroll="" auto-scroll-ratio=0.2 centered="" direction="" fullscreen="" id=ons-carousel-omen initial-index=0 item-width="" overscrollable="" style="width: 100%;" swipeable=""></ons-carousel><span class=stick-regular id=span8 style="margin-bottom: 10px;
+color: white;">← スワイプで好きなお面を選択 →</span> </div> <div id=div33 style="display: flex;
+flex-direction: column;
+gap: 20px;
+padding-left: 20px;
+flex-grow: 1;
+flex-shrink: 1;
+flex-basis: auto;
+order: 1;
+align-self: auto;
+justify-content: center;
+padding-right: 20px;"><ons-button class=stick-regular id=ons-button-omen-kaburu modifier="" style="display: flex;
+justify-content: center;
+border-radius: 20px;
+align-items: center;
+height: 50px;
+font-size: 25px;
+background-color: rgb(80, 156, 223);">お面をかぶる</ons-button><ons-button class=stick-regular id=ons-button-omen-kanri modifier=cta style="display: flex;
+justify-content: center;
+border-radius: 20px;
+height: 50px;
+align-items: center;
+font-size: 25px;
+background-color: rgb(113, 197, 197);
+margin-bottom: 20px;">お面の追加・削除</ons-button> </div></div> <ons-dialog cancelable="" id=ons-dialog-setting><div id=div53 style="text-align: center; padding: 10px;"><p id=p6>アプリ内のデータを削除するには以下のボタンを押してください</p> <ons-button id=ons-button-app-delete modifier=outline>アプリ内のデータをすべて削除</ons-button></div></ons-dialog></ons-page></template> <template id=omen-kanri.html><ons-page id=ons-page-omen-kanri><div class=page__background id=div46></div> <div class=page__content id=div47><div id=div50 style="justify-content: flex-start;
+display: flex;
+margin-top: 0px;
+margin-bottom: 10px;
+position: sticky;
+top: 0px;
+z-index: 100;
+height: 80px;
+align-items: center;
+background-color: rgb(255, 255, 255);"><ons-back-button id=ons-back-button1></ons-back-button><div id=div54 style="flex-grow: 1;
+flex-shrink: 1;
+flex-basis: auto;
+order: 1;
+display: flex;
+justify-content: center;
+align-self: auto;"><ons-button id=ons-button-omen-add-image style="border-radius: 20px;
+margin-right: 30px;">お面を追加</ons-button></div> </div> <template id=template-omen-kanri-card><ons-card class=omen-kanri-card style="justify-content: center;
+align-items: center;
+display: flex;
+position: relative;"><ons-button class=omen-kanri-edit modifier="" style="position: absolute;
+bottom: 10px;
+left: 10px;
+border-radius: 50%;
+width: 50px;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 50px;
+color: rgb(78, 173, 115);
+background-color: white;
+border: 1px solid rgb(102, 216, 140);"><ons-icon icon=fa-edit style="font-size: 30px;"></ons-icon></ons-button><img class=omen-kanri-img src="" style="max-width: 80%;
+max-height: 80%;
+object-fit: fill;
+
+background-image:
+linear-gradient(45deg, #ccc 26%, transparent 25%, transparent 75%, #ccc 75%),
+linear-gradient(45deg, #ccc 26%, transparent 25%, transparent 75%, #ccc 75%);
+background-size: 20px 20px;
+/* パターンのサイズ */
+background-position: 0 0, 10px 10px;
+/* パターンのオフセット */
+background-color: #fff;
+/* 基本の背景色 */"><ons-button class=omen-kanri-delete modifier="" style="position: absolute;
+bottom: 10px;
+right: 10px;
+border-radius: 50%;
+width: 50px;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 50px;
+color: red;
+background-color: white;
+border: 1px solid red;"><ons-icon icon=fa-xmark style="font-size: 30px;"></ons-icon></ons-button></ons-card></template><ons-list id=omen-kanri-list></ons-list> </div></ons-page></template> <script src=main.js?20250127223538 type=module></script><script>if ('serviceWorker' in navigator) {
+      ons.ready(()=> {
+          navigator.serviceWorker.register('service-worker.js?20250127223538')
+          .then(registration => { 
+              const event = new CustomEvent('PwappyServiceWorkerRegistered', { detail: registration });
+              document.dispatchEvent(event);
+          })
+          .catch(registrationError => {
+              const errorEvent = new CustomEvent('PwappyServiceWorkerRegistered', { detail: { error: registrationError } });
+              document.dispatchEvent(errorEvent);
+          });
+     });
+}</script>
