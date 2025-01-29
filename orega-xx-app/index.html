@@ -1,14 +1,42 @@
-<!DOCTYPE html><html lang=ja><head><meta content=Pwappyで作成されたPWAアプリ name=description><title>俺が〇〇だ</title><meta charset=UTF-8><meta content="IE=edge" http-equiv=X-UA-Compatible><meta content="width=device-width, initial-scale=1.0" name=viewport><link href=favicon.ico rel=icon sizes=32x32><link href="images/icon.svg?v=20250127223538" rel=icon type=image/svg+xml><link href="images/apple-touch-icon.png?v=20250127223538" rel=apple-touch-icon><link href="manifest.webmanifest?v=20250127223538" rel=manifest><script defer src=https://cdn.jsdelivr.net/npm/holderjs@2.9.9/holder.min.js></script><link crossorigin=anonymous href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css referrerpolicy=no-referrer rel=stylesheet><link href=https://unpkg.com/onsenui/css/onsenui.min.css rel=stylesheet><link href=https://unpkg.com/onsenui/css/onsen-css-components.min.css rel=stylesheet><script src=https://unpkg.com/onsenui/js/onsenui.min.js></script><script>if (ons.platform.isIPhoneX()) {
+<!DOCTYPE html><html lang=ja><head><meta content=Pwappyで作成されたPWAアプリ name=description><title>俺が〇〇だ</title><meta charset=UTF-8><meta content="IE=edge" http-equiv=X-UA-Compatible><meta content="width=device-width, initial-scale=1.0" name=viewport><link href=favicon.ico rel=icon sizes=32x32><link href="images/icon.svg?v=20250129125345" rel=icon type=image/svg+xml><link href="images/apple-touch-icon.png?v=20250129125345" rel=apple-touch-icon><link href="manifest.webmanifest?v=20250129125345" rel=manifest><script defer src=https://cdn.jsdelivr.net/npm/holderjs@2.9.9/holder.min.js></script><link crossorigin=anonymous href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css referrerpolicy=no-referrer rel=stylesheet><link href=https://unpkg.com/onsenui/css/onsenui.min.css rel=stylesheet><link href=https://unpkg.com/onsenui/css/onsen-css-components.min.css rel=stylesheet><script src=https://unpkg.com/onsenui/js/onsenui.min.js></script><script>if (ons.platform.isIPhoneX()) {
         document.documentElement.setAttribute('onsflag-iphonex-portrait', '');
         document.documentElement.setAttribute('onsflag-iphonex-landscape', '');
     }
-    ons.disableIconAutoPrefix();</script><script crossorigin=anonymous src=https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js></script><script crossorigin=anonymous src=https://cdn.jsdelivr.net/npm/@mediapipe/face_detection/face_detection.js></script><script crossorigin=anonymous src=https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js></script><script src=https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js></script><link href=https://fonts.googleapis.com rel=preconnect><link crossorigin="" href=https://fonts.gstatic.com rel=preconnect><link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel=stylesheet><link href="https://fonts.googleapis.com/css2?family=Stick&display=swap" rel=stylesheet><link href=style.css?20250127223538 rel=stylesheet> <body><app id=application><ons-navigator id=ons-navigator1 page=top.html swipeable=""></ons-navigator></app> <template id=photo.html><ons-page id=ons-page-photo><div class=page__background id=div3></div> <div class=page__content id=div4 style="overflow-y: hidden;"><div id=camera-container><div class=invisible id=demos><p id=p1><button id=webcamButton style="display: none;">ENABLE PREDICTIONS</button> <div id=div2 style="position: relative;
+    ons.disableIconAutoPrefix();</script><script crossorigin=anonymous src=https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js></script><script crossorigin=anonymous src=https://cdn.jsdelivr.net/npm/@mediapipe/face_detection/face_detection.js></script><script crossorigin=anonymous src=https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js></script><script src=https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js></script><link href=https://fonts.googleapis.com rel=preconnect><link crossorigin="" href=https://fonts.gstatic.com rel=preconnect><link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel=stylesheet><link href="https://fonts.googleapis.com/css2?family=Stick&display=swap" rel=stylesheet><link href=style.css?20250129125345 rel=stylesheet> <body><app id=application><ons-navigator id=ons-navigator1 page=top.html swipeable=""></ons-navigator></app> <template id=photo.html><ons-page id=ons-page-photo><div class=page__background id=div3></div> <div class=page__content id=div4 style="overflow-y: hidden;"><div id=camera-container><div class=invisible id=demos><p id=p1><button id=webcamButton style="display: none;">ENABLE PREDICTIONS</button> <div id=div2 style="position: relative;
 /* width: 480px; */
 width: 100%;
 height: 100%;"><video id=webcam style="width: 100%;
 height: 100%;"></video><canvas height="" id=output_canvas style="width: 100%;
 height: 100%;
-object-fit: contain;" width=""></canvas> </div> <ul id=video-blend-shapes></ul></div></div> <span id=span-print-swipe-message1 style="position: fixed;
+object-fit: contain;" width=""></canvas> </div> <ul id=video-blend-shapes></ul></div></div> <span id=span-after-second-record-message style="text-shadow:
+-2px -2px 2px #fff,
+-1px -2px 2px #fff,
+0px -2px 2px #fff,
+1px -2px 2px #fff,
+2px -2px 2px #fff,
+-2px -1px 2px #fff,
+2px -1px 2px #fff,
+-2px 0px 2px #fff,
+2px 0px 2px #fff,
+-2px 1px 2px #fff,
+2px 1px 2px #fff,
+-2px 2px 2px #fff,
+-1px 2px 2px #fff,
+0px 2px 2px #fff,
+1px 2px 2px #fff,
+2px 2px 2px #fff;
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translateX(-50%) translateY(-50%);
+background: rgba(0, 0, 0, 0.5);
+width: 50%;
+height: 60px;
+display: none;
+justify-content: center;
+align-items: center;
+text-align: center;
+border-radius: 20px;">5秒後に開始します</span><span id=span-print-swipe-message1 style="position: fixed;
 width: 100%;
 justify-content: center;
 align-items: center;
@@ -101,26 +129,50 @@ align-items: center;
 justify-content: center;
 color: white;
 font-weight: 900;">コンプラ</div></ons-button> </div></div> <div id=div-camera-container style="position: fixed;
-display: flex;
 width: 100%;
-justify-content: space-evenly;
+display: flex;
+justify-content: space-around;
 bottom: 30px;"><ons-button id=ons-button-camera-rotate modifier="" style="border-radius: 100%;
 width: 50px;
 display: none;
 align-items: center;
 justify-content: center;
-height: 50px;"><ons-icon icon=fa-rotate id=ons-icon1 style="font-size: 20px;"></ons-icon></ons-button><ons-button id=ons-button-camera-exec style="border-radius: 100%;
+flex-grow: 0;
+flex-shrink: 1;
+flex-basis: auto;
+align-self: auto;
+order: 0;
+height: 50px;"><ons-icon icon=fa-rotate id=ons-icon1 style="font-size: 20px;"></ons-icon></ons-button><ons-button id=ons-button-camera-exec style="flex-grow: 0;
+flex-shrink: 1;
+flex-basis: auto;
+order: 0;
+align-self: auto;
+border-radius: 100%;
 width: 50px;
 display: flex;
 align-items: center;
 justify-content: center;
-height: 50px;"><ons-icon icon=fa-camera id=ons-icon4 style="font-size: 20px;"></ons-icon></ons-button><ons-button id=ons-button-movie-exec style="border-radius: 100%;
+height: 50px;"><ons-icon icon=fa-camera id=ons-icon4 style="font-size: 20px;"></ons-icon></ons-button><ons-select id=ons-select-camera-wait style="display: flex;
+align-items: center;
+flex-grow: 0;
+flex-shrink: 1;
+flex-basis: auto;
+order: 1;
+align-self: auto;
+background-color: white;
+border-radius: 20%;
+padding-left: 15px;"><option id=option1 value=instant>即時撮影 <option id=option2 value=five_seconds>５秒後に撮影</ons-select><ons-button id=ons-button-movie-exec style="flex-grow: 0;
+flex-shrink: 1;
+flex-basis: auto;
+order: 2;
+align-self: auto;
+border-radius: 100%;
 width: 50px;
 display: flex;
 align-items: center;
 justify-content: center;
 height: 50px;"><ons-icon icon=fa-video id=ons-icon-movie-exec style="font-size: 20px;"></ons-icon><ons-icon icon=fa-stop id=ons-icon-movie-stop style="font-size: 20px;
-display: none;"></ons-icon></ons-button> </div> <img id=overlay-image src=images/%E3%81%8A%E9%9D%A2%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB1.png style="display: none;"><div id=error-message style="display: none;"></div> </div> <ons-modal id=ons-modal-satuei><ons-progress-circular id=ons-progress-circular2 indeterminate modifier=""></ons-progress-circular><div id=div36 style="text-align: center"><p id=p4 style="
+display: none;"></ons-icon></ons-button> </div> <img id=overlay-image src="" style="display: none;"><div id=error-message style="display: none;"></div> </div> <ons-modal id=ons-modal-satuei><ons-progress-circular id=ons-progress-circular2 indeterminate modifier=""></ons-progress-circular><div id=div36 style="text-align: center"><p id=p4 style="
 display: flex;
 justify-content: center;
 align-items: center;
@@ -354,9 +406,9 @@ align-items: center;
 height: 50px;
 color: red;
 background-color: white;
-border: 1px solid red;"><ons-icon icon=fa-xmark style="font-size: 30px;"></ons-icon></ons-button></ons-card></template><ons-list id=omen-kanri-list></ons-list> </div></ons-page></template> <script src=main.js?20250127223538 type=module></script><script>if ('serviceWorker' in navigator) {
+border: 1px solid red;"><ons-icon icon=fa-xmark style="font-size: 30px;"></ons-icon></ons-button></ons-card></template><ons-list id=omen-kanri-list></ons-list> </div></ons-page></template> <script src=main.js?20250129125345 type=module></script><script>if ('serviceWorker' in navigator) {
       ons.ready(()=> {
-          navigator.serviceWorker.register('service-worker.js?20250127223538')
+          navigator.serviceWorker.register('service-worker.js?20250129125345')
           .then(registration => { 
               const event = new CustomEvent('PwappyServiceWorkerRegistered', { detail: registration });
               document.dispatchEvent(event);
