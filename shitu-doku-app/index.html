@@ -1,8 +1,8 @@
-<!DOCTYPE html><html lang=ja><head><meta content=Pwappyで作成されたPWAアプリ name=description><title>疾読</title><meta charset=UTF-8><meta content="IE=edge" http-equiv=X-UA-Compatible><meta content="width=device-width, initial-scale=1.0" name=viewport><link href=favicon.ico rel=icon sizes=32x32><link href="images/icon.svg?v=20250129004959" rel=icon type=image/svg+xml><link href="images/apple-touch-icon.png?v=20250129004959" rel=apple-touch-icon><link href="manifest.webmanifest?v=20250129004959" rel=manifest><script defer src=https://cdn.jsdelivr.net/npm/holderjs@2.9.9/holder.min.js></script><link crossorigin=anonymous href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css referrerpolicy=no-referrer rel=stylesheet><link href=https://unpkg.com/onsenui/css/onsenui.min.css rel=stylesheet><link href=https://unpkg.com/onsenui/css/onsen-css-components.min.css rel=stylesheet><script src=https://unpkg.com/onsenui/js/onsenui.min.js></script><script>if (ons.platform.isIPhoneX()) {
+<!DOCTYPE html><html lang=ja><head><meta content=Pwappyで作成されたPWAアプリ name=description><title>疾読</title><meta charset=UTF-8><meta content="IE=edge" http-equiv=X-UA-Compatible><meta content="width=device-width, initial-scale=1.0" name=viewport><link href=favicon.ico rel=icon sizes=32x32><link href="images/icon.svg?v=20250129094710" rel=icon type=image/svg+xml><link href="images/apple-touch-icon.png?v=20250129094710" rel=apple-touch-icon><link href="manifest.webmanifest?v=20250129094710" rel=manifest><script defer src=https://cdn.jsdelivr.net/npm/holderjs@2.9.9/holder.min.js></script><link crossorigin=anonymous href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css referrerpolicy=no-referrer rel=stylesheet><link href=https://unpkg.com/onsenui/css/onsenui.min.css rel=stylesheet><link href=https://unpkg.com/onsenui/css/onsen-css-components.min.css rel=stylesheet><script src=https://unpkg.com/onsenui/js/onsenui.min.js></script><script>if (ons.platform.isIPhoneX()) {
         document.documentElement.setAttribute('onsflag-iphonex-portrait', '');
         document.documentElement.setAttribute('onsflag-iphonex-landscape', '');
     }
-    ons.disableIconAutoPrefix();</script><script src=https://cdn.jsdelivr.net/npm/tiny-segmenter@0.2.0/dist/tiny-segmenter-0.2.0.min.js></script><link href=https://fonts.googleapis.com rel=preconnect><link crossorigin="" href=https://fonts.gstatic.com rel=preconnect><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel=stylesheet><link href=style.css?20250129004959 rel=stylesheet> <body><app id=application><ons-navigator id=ons-navigator1 page=page2.html swipeable=""></ons-navigator></app> <template id=top.html><ons-page id=ons-page1><div class=page__background id=div1></div> <div class=page__content id=div2 style="
+    ons.disableIconAutoPrefix();</script><script src=https://cdn.jsdelivr.net/npm/tiny-segmenter@0.2.0/dist/tiny-segmenter-0.2.0.min.js></script><link href=https://fonts.googleapis.com rel=preconnect><link crossorigin="" href=https://fonts.gstatic.com rel=preconnect><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel=stylesheet><link href=style.css?20250129094710 rel=stylesheet> <body><app id=application><ons-navigator id=ons-navigator1 page=page2.html swipeable=""></ons-navigator></app> <template id=top.html><ons-page id=ons-page1><div class=page__background id=div1></div> <div class=page__content id=div2 style="
 display: flex;
 flex-direction: column;
 "><div id=div3></div></div></ons-page></template> <template id=page2.html><ons-page id=ons-page2><div class=page__background id=div4></div> <div class=page__content id=div5 style="
@@ -14,7 +14,7 @@ flex-basis: auto;
 order: 1;
 align-self: auto;
 overflow-y: scroll;
-resize: none;"></textarea><div id=div7 style="flex-grow: 0;
+resize: vertical;"></textarea><div id=div7 style="flex-grow: 0;
 flex-shrink: 0;
 flex-basis: auto;
 order: 2;
@@ -38,7 +38,7 @@ flex-shrink: 1;
 flex-basis: auto;
 order: 0;
 align-self: auto;
-width: 80px;
+width: 50px;
 border: 1px solid black;
 border-radius: 10px;" type=number value=100></ons-input><span id=span1 style="
 flex-grow: 0;
@@ -95,21 +95,24 @@ background-color: black;"><span class=noto-sans-jp-400 id=span-prev-read-text st
 min-height: 50px;
 white-space: nowrap;
 /* 改行を禁止 */
-display: inline-block;
 /* 幅の計算のために必要 */
+display: flex;
+align-items: flex-end;
 color: rgb(182, 182, 182);">1つ前の文章</span><span class=noto-sans-jp-900 id=span-read-text style="font-size: 80px;
 min-height: 100px;
 white-space: nowrap;
 /* 改行を禁止 */
-display: inline-block;
 /* 幅の計算のために必要 */
 color: red;
+display: flex;
+align-items: center;
 font-weight: 900;">文章</span><span class=noto-sans-jp-400 id=span-next-read-text style="font-size: 30px;
 min-height: 50px;
 white-space: nowrap;
-/* 改行を禁止 */
-display: inline-block;
+
 /* 幅の計算のために必要 */
+display: flex;
+align-items: flex-start;
 color: rgb(182, 182, 182);">1つ後の文章</span> </div> <div id=div8 style="flex-grow: 0;
 flex-shrink: 0;
 flex-basis: auto;
@@ -118,9 +121,9 @@ align-self: auto;
 display: flex;
 flex-direction: column;
 align-items: flex-end;
-margin-right: 20px;;"><span class=noto-sans-jp-400 id=span-start-to-end-second>開始から停止まで： - 秒</span><span class=noto-sans-jp-400 id=span-cps>CPS：- 文字/秒</span><span class=noto-sans-jp-400 id=span-cpm>CPM：- 文字/秒</span> </div></div></ons-page></template> <script src=main.js?20250129004959 type=module></script><script>if ('serviceWorker' in navigator) {
+margin-right: 20px;;"><span class=noto-sans-jp-400 id=span-start-to-end-second>開始から停止まで： - 秒</span><span class=noto-sans-jp-400 id=span-cps>CPS：- 文字/秒</span><span class=noto-sans-jp-400 id=span-cpm>CPM：- 文字/秒</span> </div></div></ons-page></template> <script src=main.js?20250129094710 type=module></script><script>if ('serviceWorker' in navigator) {
       ons.ready(()=> {
-          navigator.serviceWorker.register('service-worker.js?20250129004959')
+          navigator.serviceWorker.register('service-worker.js?20250129094710')
           .then(registration => { 
               const event = new CustomEvent('PwappyServiceWorkerRegistered', { detail: registration });
               document.dispatchEvent(event);
