@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang=ja><head><meta content=Pwappyで作成されたPWAアプリ name=description><title>ふにゃふにゃ雪合戦</title><meta charset=UTF-8><meta content="IE=edge" http-equiv=X-UA-Compatible><meta content="width=device-width, initial-scale=1.0" name=viewport><link href=favicon.ico rel=icon sizes=32x32><link href="images/icon.svg?v=20260818193841" rel=icon type=image/svg+xml><link href="images/apple-touch-icon.webp?v=20260818193841" rel=apple-touch-icon><link href="manifest.webmanifest?v=20260818193841" rel=manifest><script async crossorigin=anonymous integrity=sha384-uNfopWutThwoRT8a4rxTcePrs7I+9TFRKYXiDRL+w+B3utZDj+9HD539GsfLFWMQ src=https://cdn.jsdelivr.net/npm/holderjs@2.9.9/holder.min.js></script><link crossorigin=anonymous href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css integrity=sha384-nRgPTkuX86pH8yjPJUAFuASXQSSl2/bBUiNV47vSYpKFxHJhbcrGnmlYpYJMeD7a referrerpolicy=no-referrer rel=stylesheet><link crossorigin=anonymous href=https://unpkg.com/onsenui/css/onsenui-core.min.css integrity=sha384-kI9wnT+Nr9z7LE7jR0xI6osn2C5tP5mZjo20zBbnLiGuZmnaLyCxsaF+Pe8QeOOm rel=stylesheet><link crossorigin=anonymous href=https://unpkg.com/onsenui/css/onsen-css-components.min.css integrity=sha384-M8oRq9A+5rCpbizl+H5nv05zBbVoRMUQkPkDv7/3q8RrZ+k/a/UuUa4PRSHnDsZQ rel=stylesheet><script crossorigin=anonymous integrity=sha384-4NbuDpldXf5c2fIvpPjsCuOdxjYDn4CoK/smRpAYh9aDLsF5yXxsOK1mzF6AeRTv src=https://unpkg.com/onsenui/js/onsenui.min.js></script><script>if (ons.platform.isIPhoneX()) {
+<!DOCTYPE html><html lang=ja><head><meta content=Pwappyで作成されたPWAアプリ name=description><title>ふにゃふにゃ雪合戦</title><meta charset=UTF-8><meta content="IE=edge" http-equiv=X-UA-Compatible><meta content="width=device-width, initial-scale=1.0" name=viewport><link href=favicon.ico rel=icon sizes=32x32><link href="images/icon.svg?v=20260818193841" rel=icon type=image/svg+xml><link href="images/apple-touch-icon.webp?v=20260818193841" rel=apple-touch-icon><link href="/example-apps/funya-yuki/manifest.webmanifest?v=20260818193841" rel=manifest><script async crossorigin=anonymous integrity=sha384-uNfopWutThwoRT8a4rxTcePrs7I+9TFRKYXiDRL+w+B3utZDj+9HD539GsfLFWMQ src=https://cdn.jsdelivr.net/npm/holderjs@2.9.9/holder.min.js></script><link crossorigin=anonymous href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css integrity=sha384-nRgPTkuX86pH8yjPJUAFuASXQSSl2/bBUiNV47vSYpKFxHJhbcrGnmlYpYJMeD7a referrerpolicy=no-referrer rel=stylesheet><link crossorigin=anonymous href=https://unpkg.com/onsenui/css/onsenui-core.min.css integrity=sha384-kI9wnT+Nr9z7LE7jR0xI6osn2C5tP5mZjo20zBbnLiGuZmnaLyCxsaF+Pe8QeOOm rel=stylesheet><link crossorigin=anonymous href=https://unpkg.com/onsenui/css/onsen-css-components.min.css integrity=sha384-M8oRq9A+5rCpbizl+H5nv05zBbVoRMUQkPkDv7/3q8RrZ+k/a/UuUa4PRSHnDsZQ rel=stylesheet><script crossorigin=anonymous integrity=sha384-4NbuDpldXf5c2fIvpPjsCuOdxjYDn4CoK/smRpAYh9aDLsF5yXxsOK1mzF6AeRTv src=https://unpkg.com/onsenui/js/onsenui.min.js></script><script>if (ons.platform.isIPhoneX()) {
         document.documentElement.setAttribute('onsflag-iphonex-portrait', '');
         document.documentElement.setAttribute('onsflag-iphonex-landscape', '');
     }
@@ -7,7 +7,13 @@
     const options = {
       type: 'module',
     };
-    navigator.serviceWorker.register('service-worker.js', options)
+    navigator.serviceWorker.register(
+      '/example-apps/funya-yuki/service-worker.js',
+      {
+        type: 'module',
+        scope: '/example-apps/funya-yuki/'
+      }
+    )
       .then(registration => { 
         const event = new CustomEvent('PwappyServiceWorkerRegistered', { detail: registration });
         document.dispatchEvent(event);
